@@ -19,7 +19,7 @@ jobs:
         run: |
           rustup toolchain install stable
           rustup target add ${{ matrix.target }}
-          apt get musl-dev
+          apt-get install --assume-yes musl-dev
       - name: Run hooks
         run: |
           cargo build --release --target ${{ matrix.target }} --all-features
