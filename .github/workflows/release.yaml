@@ -1,5 +1,8 @@
 name: Release
-on: tags
+on:
+  push:
+    tags:
+      - '**'
 jobs:
   build-release:
     name: Build Release
