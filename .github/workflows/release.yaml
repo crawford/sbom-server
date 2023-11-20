@@ -16,7 +16,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Rust Toolchain
-        run: rustup toolchain install stable
+        run: |
+          rustup toolchain install stable
+          rustup target add ${{ matrix.target }}
       - name: Run hooks
         run: |
           cargo build --release --target ${{ matrix.target }} --all-features
