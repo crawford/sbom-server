@@ -1,5 +1,5 @@
 name: Release
-on: tag
+on: tags
 jobs:
   build-release:
     name: Build Release
