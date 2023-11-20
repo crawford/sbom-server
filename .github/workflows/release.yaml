@@ -15,10 +15,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Rust Toolchain
+      - name: Install Toolchains
         run: |
           rustup toolchain install stable
           rustup target add ${{ matrix.target }}
+          apt get musl-dev
       - name: Run hooks
         run: |
           cargo build --release --target ${{ matrix.target }} --all-features
